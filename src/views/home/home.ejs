@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/29d377923f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Calculadora</title>
+    
 </head>
 <body>
- <h4>CALCULADORA DE MARTIN Y ANGELA</h4>   
+    <%- include('../partials/header') %> 
+ <h1>CALCULADORA DE MARTIN Y ANGELA</h1> 
+  <div class="resultadoFront">  <!--Botones calculadora front -->
+    <div class="mostrarResultado"></div>
+      <label for="frontNumeroA">Ingrese número A</label>
+      <input class="calculoFront" type="text" name="enviarFrontA" id="frontNumeroA" placeholder="Numero A">
+      <label for="frontNumeroB">Ingrese número B</label>
+      <input class="calculoFront2" type="text" name="enviarFrontB" id="frontNumeroB" placeholder="Numero B">
+      <button class="botonEnviar" type="submit">Enviar</button>
+      <!-- botones numeros -->
+      <div>
+        <input class="inputResultado" placeholder="Resultado">
+      </div>
+      <div>
+        <button class="botonUno" value="1">1</button>
+        <button class="botonDos" value="2">2</button>
+        <button class="botonTres" value="3">3</button>
+        <button class="botonSuma">+</button>
+      </div>
+      <div>
+        <button class="botonCuatro" value="4">4</button>
+        <button class="botonCinco" value="5">5</button>
+        <button class="botonSeis" value="6">6</button>
+        <button class="botonResta">-</button>
+      </div>
+      <div>
+        <button class="botonSiete" value="7">7</button>
+        <button class="botonOcho" value="8">8</button>
+        <button class="botonNueve" value="9">9</button>
+        <button class="botonMultiplicar">*</button>
+      </div>
+      <div>
+        <button class="botonDecimal" value=",">,</button>
+        <button class="botonCero" value="0">0</button>
+        <button class="botonIgual" value="=">=</button>
+      </div>
+     
+  
+ </div>
+
+
+
+
+
+ <form action="/calculadora" method="POST" >
+  <% if (locals.resultadoEnviarFront) { %>
+    <p>
+      <h4>Resultado</h4>
+      <%= resultadoEnviarFront %>
+    </p>>
+  <% } %>
+   <label for="numeroA">Ingrese número A</label>
+   <input type="text" name="enviarBackA" id="numeroA" placeholder="Numero A">
+   <label for="numeroB">Ingrese número B</label>
+   <input type="text" name="enviarBackB" id="numeroB" placeholder="Numero B">
+   <button type="submit">Enviar</button>
+ </form> 
+ <script src="/js/calculadoraFront.js"></script>
 </body>
 </html>
